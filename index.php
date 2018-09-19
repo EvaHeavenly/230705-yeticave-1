@@ -46,6 +46,16 @@ $categories = [
     'URL' => 'img/lot-6.jpg'
      ]
 ];
+
+function format_money($number) {
+	$num = ceil($number);
+		if ($num > 1000) {
+			$num = number_format($num, 0, '.', ' ');
+		}
+	$num .= ' ₽';
+	return $num; 
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -123,7 +133,7 @@ $categories = [
                     <div class="lot__state">
                         <div class="lot__rate">
                             <span class="lot__amount">Стартовая цена</span>
-                            <span class="lot__cost"><?=$value['price'];?><b class="rub">р</b></span>
+                            <span class="lot__cost"><?=format_money($value['price']);?></span>
                         </div>
                         <div class="lot__timer timer">
 
