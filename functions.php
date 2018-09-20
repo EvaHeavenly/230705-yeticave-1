@@ -14,7 +14,7 @@ function include_template($name, $data) {
 
     $result = ob_get_clean();
 
-return $result;
+	return $result;
 }
 
 function format_money($number) {
@@ -24,4 +24,22 @@ function format_money($number) {
 		}
 	$num .= ' ₽';
 	return $num; 
+}
+
+date_default_timezone_set("Europe/Moscow");
+
+function get_time($endtime) {
+	$time_amount = $endtime - time();
+
+	$hours = floor($time_amount / 3600);
+	$minutes = floor(($time_amount - $hours * 3600) / 60);
+
+	if ($hours < 10) {
+		$hours = '0' . $hours;
+	}
+	if ($minutes < 10) {
+		$minutes = '0' . $minutes;
+	}
+
+	return $hours . ':' . $minutes;
 }
