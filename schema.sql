@@ -8,7 +8,7 @@ CREATE TABLE categories (
 id INT AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(64)
 );
-CREATE UNIQUE INDEX name ON categories(name);
+CREATE UNIQUE INDEX с_name ON categories(name);
 
 CREATE TABLE lots (
 id INT AUTO_INCREMENT PRIMARY KEY,
