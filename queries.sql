@@ -65,4 +65,4 @@ WHERE
 UPDATE lots SET name = '2014 Rossignol District Snowboard NEW' WHERE id = 1;
 
  -- Получить список самых свежих ставок для лота по его идентификатору.
-SELECT * FROM bets WHERE lot_id = 1 ORDER BY created_at DESC; 
+SELECT * FROM bets WHERE lot_id = 1 ORDER BY created_at DESC;
