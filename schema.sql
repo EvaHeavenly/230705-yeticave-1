@@ -8,7 +8,7 @@ CREATE TABLE categories (
 id INT AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(64)
 );
-CREATE UNIQUE INDEX с_name ON categories(name);
+CREATE UNIQUE INDEX c_name ON categories(name);
 
 CREATE TABLE lots (
 id INT AUTO_INCREMENT PRIMARY KEY,
@@ -19,8 +19,8 @@ image VARCHAR(128),
 start_price INT,
 finish_date DATETIME,
 bet_step INT,
-user_id INT,
-category_id INT	
+user_id INT(11),
+category_id INT(11)	
 );
 CREATE INDEX l_name ON lots(name);
 
@@ -28,8 +28,8 @@ CREATE TABLE bets (
 id INT AUTO_INCREMENT PRIMARY KEY,
 created_at DATETIME,
 bet_amount INT,
-user_id INT,
-lot_id INT
+user_id INT(11),
+lot_id INT(11)
 );
 
 CREATE TABLE users (
